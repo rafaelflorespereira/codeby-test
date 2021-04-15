@@ -1,17 +1,33 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <button @click="getAboveItems">Show items above price</button>
+    <button @click="getBelowItems">Show items below price</button>
+    <shopping-cart :shoppingCartDetails="items"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ShoppingCart from './components/ShoppingCart.vue'
+import aboveItems from './data/priceAbove.json'
+import belowItems from './data/priceBelow.json'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    ShoppingCart
+  },
+  data() {
+    return {
+      items: []
+    }
+  },
+  methods:{
+    getAboveItems() {
+      this.items = aboveItems
+    },
+    getBelowItems() {
+      this.items = belowItems
+    }
   }
 }
 </script>
