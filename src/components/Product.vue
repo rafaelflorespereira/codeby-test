@@ -19,10 +19,11 @@ export default {
 .product {
   display: flex;
   flex-direction: row;
-  height: 20rem;
+  height: 10rem;
+  margin: 0 auto;
   &__image {
-    width: 25%;
-    border: 1px solid #999;
+    width: 10rem;
+    border: 1px solid #ccc;
     object-fit: cover;
   }
   &__info {
