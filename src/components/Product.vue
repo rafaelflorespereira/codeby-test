@@ -16,4 +16,16 @@ export default {
 </script>
 
 <style lang="scss">
+.product {
+  display: flex;
+  &__image {
+  }
+  &__name {
+
+  }
+  &__price {
+  }
+  &__selling-price {
+  }
+}
 </style>
