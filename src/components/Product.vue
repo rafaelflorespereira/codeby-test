@@ -1,10 +1,10 @@
 <template>
-  <div>
-    <img :src="product.imageUrl" alt="product-img" />
+  <div class="product">
+    <img :src="product.imageUrl" class="product__image" alt="product-img" />
     <div>
-      <h3>{{ product.name }}</h3>
-      <p>{{ product.price }}</p>
-      <p>{{ product.sellingPrice }}</p>
+      <h3 class="product__name">{{ product.name }}</h3>
+      <p class="product__price">{{ product.price }}</p>
+      <p class="product__selling-price">{{ product.sellingPrice }}</p>
     </div>
   </div>
 </template>
@@ -15,5 +15,5 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 </style>
