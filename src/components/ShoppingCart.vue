@@ -1,6 +1,7 @@
 <template>
 <div>
   <h1>Carrinho de Compras</h1>
+  <button @click="$emit('close', false)">&times;</button>
   <ul>
     <li v-for="product in shoppingCartDetails.items" :key="product.uniqueId">
       <product :product="product"/>
@@ -28,6 +29,11 @@ export default {
         total += product.sellingPrice
       });
       return total
+    }
+  },
+  methods: {
+    close() {
+
     }
   }
 }

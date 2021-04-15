@@ -2,7 +2,7 @@
   <div id="app">
     <button @click="getAboveItems">Show items above price</button>
     <button @click="getBelowItems">Show items below price</button>
-    <shopping-cart :shoppingCartDetails="items"/>
+    <shopping-cart v-show="open" @close="close" :shoppingCartDetails="items"/>
   </div>
 </template>
 
@@ -18,15 +18,21 @@ export default {
   },
   data() {
     return {
-      items: []
+      items: [],
+      open: false
     }
   },
   methods:{
     getAboveItems() {
+      this.open = true
       this.items = aboveItems
     },
     getBelowItems() {
+      this.open = true
       this.items = belowItems
+    },
+    close(value) {
+      this.open = value
     }
   }
 }
