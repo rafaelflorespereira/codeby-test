@@ -43,7 +43,6 @@ export default {
       font-weight: 800;
     }
     &-price {
-      font-weight: bold;
       color: #999;
       margin: .4rem 0;
     }
