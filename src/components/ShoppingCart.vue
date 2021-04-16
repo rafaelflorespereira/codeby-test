@@ -61,7 +61,7 @@ export default {
   margin: 5rem auto;
   background-color: white;
   border-radius: 20px;
-  box-shadow: 2rem 2rem 4rem rgba(0, 0, 0, 0.8);
+  box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.2), -1rem 1rem 2rem rgba(0, 0, 0, 0.2);
   &__header {
     padding: 2rem;
     position: relative;
