@@ -56,6 +56,7 @@ export default {
 html {
   box-sizing: border-box;
 }
+
 @font-face {
   font-family: 'Poppins';
   src: url('assets/fonts/Poppins-Regular.ttf') format("truetype");
@@ -64,14 +65,14 @@ html {
 
 @font-face {
   font-family: 'Poppins';
-  src: url('assets/fonts/Poppins-Bold.ttf') format("truetype");
-  font-weight: bold;
+  src: url('assets/fonts/Poppins-SemiBold.ttf') format("truetype");
+  font-weight: 600;
 }
 
 @font-face {
   font-family: 'Poppins';
-  src: url('assets/fonts/Poppins-SemiBold.ttf') format("truetype");
-  font-weight: 600;
+  src: url('assets/fonts/Poppins-Bold.ttf') format("truetype");
+  font-weight: bold;
 }
 
 @font-face {
