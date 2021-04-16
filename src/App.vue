@@ -1,10 +1,25 @@
 <template>
   <div id="app">
-    <button @click="getAboveItems">Show items above price</button>
-    <button @click="getBelowItems">Show items below price</button>
+    <div class="welcome">
+      <h3>Welcome!</h3>
+      <p>
+        The above or below selection will get the different json file given in
+        the test.
+      </p>
+    </div>
+    <button class="blue-button" @click="getAboveItems">
+      Show items above price
+    </button>
+    <button class="blue-button" @click="getBelowItems">
+      Show items below price
+    </button>
     <transition name="fade">
       <div v-show="open" class="pop-up">
-        <shopping-cart v-show="open" @close="close" :shoppingCartDetails="items" />
+        <shopping-cart
+          v-show="open"
+          @close="close"
+          :shoppingCartDetails="items"
+        />
       </div>
     </transition>
   </div>
@@ -38,11 +53,11 @@ export default {
     close(value) {
       this.open = value;
     },
-  }
+  },
 };
 </script>
 
-<style>
+<style lang="scss">
 * {
   margin: 0;
   padding: 0;
@@ -51,39 +66,53 @@ export default {
 *,
 *::before,
 *::after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 html {
   box-sizing: border-box;
 }
 
 @font-face {
-  font-family: 'Poppins';
-  src: url('assets/fonts/Poppins-Regular.ttf') format("truetype");
+  font-family: "Poppins";
+  src: url("assets/fonts/Poppins-Regular.ttf") format("truetype");
   font-weight: normal;
 }
 
 @font-face {
-  font-family: 'Poppins';
-  src: url('assets/fonts/Poppins-SemiBold.ttf') format("truetype");
+  font-family: "Poppins";
+  src: url("assets/fonts/Poppins-SemiBold.ttf") format("truetype");
   font-weight: 600;
 }
 
 @font-face {
-  font-family: 'Poppins';
-  src: url('assets/fonts/Poppins-Bold.ttf') format("truetype");
+  font-family: "Poppins";
+  src: url("assets/fonts/Poppins-Bold.ttf") format("truetype");
   font-weight: bold;
 }
 
 @font-face {
-  font-family: 'Poppins';
-  src: url('assets/fonts/Poppins-Black.ttf') format("truetype");
+  font-family: "Poppins";
+  src: url("assets/fonts/Poppins-Black.ttf") format("truetype");
   font-weight: 900;
 }
 
 #app {
   text-align: center;
   font-family: Poppins;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0 20%;
+}
+
+.welcome {
+  padding: 0 4rem;
+  color: rgb(33, 122, 1);
+  background-color: rgb(199, 255, 166);
+  border-radius: 10px;
+  font-size: 2rem;
 }
 
 .pop-up {
@@ -92,7 +121,7 @@ html {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgb(209,216,229);
+  background-color: rgb(209, 216, 229);
   z-index: 9999;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
@@ -100,7 +129,7 @@ html {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: all 0.3s .2s;
+  transition: all 0.3s 0.2s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
