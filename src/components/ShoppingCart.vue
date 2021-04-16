@@ -20,7 +20,7 @@
     </ul>
     <section class="total u-bottom-border">
       <p class="total__text">Total</p>
-      <p class="total__price">R&#36;{{ shoppingCartDetails.value | decimalPrice }}</p>
+      <p class="total__price">R&#36;{{ total | decimalPrice }}</p>
       <p v-show="total > 1000" class="total__notification">
         Parabéns, sua compra tem frete grátis !
       </p>
@@ -42,7 +42,7 @@ export default {
     total() {
       var total = 0;
       this.shoppingCartDetails.items.forEach((product) => {
-        total += product.sellingPrice;
+        total += product.sellingPrice * product.quantity;
       });
       return total;
     },
