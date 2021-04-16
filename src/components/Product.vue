@@ -4,10 +4,10 @@
     <div class="product__info">
       <h3 class="product__info-name">{{ product.name | sUcfirst }}</h3>
       <p class="product__info-price">
-        R&#36;{{ (product.price * product.quantity) | decimalPrice }}
+        R&#36;{{ product.price | decimalPrice }}
       </p>
       <p class="product__info-selling-price">
-        R&#36;{{ (product.sellingPrice * product.quantity) | decimalPrice }}
+        R&#36;{{ product.sellingPrice | decimalPrice }}
       </p>
     </div>
 
@@ -15,6 +15,12 @@
       <span class="product__subtotal--icon" @click="removeItem">&#8722;</span>
       <span class="product__subtotal--quantity">{{ product.quantity }}</span>
       <span class="product__subtotal--icon" @click="addItem">&#43;</span>
+      <p class="product__info-price">
+        R&#36;{{ (product.price * product.quantity) | decimalPrice }}
+      </p>
+      <p class="product__info-selling-price">
+        R&#36;{{ (product.sellingPrice * product.quantity) | decimalPrice }}
+      </p>
     </div>
   </div>
 </template>
@@ -85,7 +91,7 @@ export default {
     font-size: 1.5rem;
     align-self: center;
     &--icon {
-      margin: .5rem;
+      margin: 0.5rem;
       cursor: pointer;
     }
     &--quantity {
