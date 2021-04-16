@@ -2,7 +2,7 @@
   <div class="product">
     <img :src="product.imageUrl" class="product__image" alt="product-img" />
     <div class="product__info">
-      <h3 class="product__info-name">{{ product.name }}</h3>
+      <h3 class="product__info-name">{{ product.name | sUcfirst }}</h3>
       <p class="product__info-price">R&#36;{{ product.price | decimalPrice }}</p>
       <p class="product__info-selling-price">
         R&#36;{{ product.sellingPrice | decimalPrice }}
@@ -18,6 +18,13 @@ export default {
     decimalPrice(price) {
       return (price / 100).toFixed(2);
     },
+    /* Capitalizing first string.
+    code got from https://dzone.com/articles/capitalize-first-letter-string-javascript
+    added last to lower the rest of the string.
+    */
+    sUcfirst(string) {
+      return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+    }
   },
 };
 </script>
@@ -40,11 +47,13 @@ export default {
     align-items: flex-start;
     &-name {
       font-size: 1.5rem;
-      font-weight: 800;
+      font-weight: 900;
     }
     &-price {
       color: #999;
       margin: .4rem 0;
+      font-weight: 600;
+      font-size: 1.1rem;
     }
     &-selling-price {
       font-weight: 600;
